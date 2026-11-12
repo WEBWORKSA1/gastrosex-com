@@ -1,0 +1,42 @@
+---
+layout: "default"
+page_title: "Kitchen Converter &amp; Doneness Chart | Gastrosex.com"
+desc: "Cups to grams, Fahrenheit to Celsius, recipe scaling and steak temperatures. Free to use, no sign-up."
+og_title: "Kitchen Converter &amp; Doneness Chart"
+canon: "https://gastrosex.com/tools/kitchen-converter.html"
+og_type: "website"
+og_image: ""
+robots: "index, follow, max-image-preview:large"
+root: "../"
+active: "tools"
+body_class: ""
+tools: true
+is404: false
+---
+{% raw %}<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Kitchen Converter & Doneness Chart", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (web browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://gastrosex.com/tools/kitchen-converter.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gastrosex.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gastrosex.com/tools.html"}, {"@type": "ListItem", "position": 3, "name": "Kitchen Converter & Doneness Chart"}]}</script>
+<section class="wrap tool-page" data-tool="kitchen-converter"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / <span aria-current="page">Kitchen Converter &amp; Doneness Chart</span></nav>
+<header class="page-head page-head-tight"><h1>Kitchen Converter &amp; Doneness Chart</h1><p class="lede">Cups to grams, Fahrenheit to Celsius, recipe scaling and steak temperatures.</p></header>
+
+<div class="conv-grid">
+<section class="out-block"><h2>Volume and weight</h2>
+<form data-conv-form class="conv-form"><div class="row"><input type="number" name="v" value="1" step="any" aria-label="Amount">
+<select name="from" aria-label="From unit"><option value="cup">cups</option><option value="tbsp">tablespoons</option><option value="tsp">teaspoons</option><option value="ml">milliliters</option><option value="floz">fluid ounces</option><option value="g">grams</option><option value="oz">ounces</option><option value="lb">pounds</option></select>
+<select name="ing" aria-label="Ingredient"><option value="water">water, milk, stock</option><option value="flour">all-purpose flour</option><option value="sugar">granulated sugar</option><option value="butter">butter</option><option value="rice">arborio rice</option><option value="cream">heavy cream</option></select></div></form>
+<div data-conv-out class="conv-out"></div><p class="muted small">Weight-volume conversions depend on the ingredient and are approximate.</p></section>
+<section class="out-block"><h2>Oven temperature</h2>
+<form data-temp-form class="conv-form"><div class="row"><input type="number" name="t" value="200" aria-label="Temperature"><select name="u" aria-label="Unit"><option value="C">°C</option><option value="F">°F</option></select></div></form>
+<div data-temp-out class="conv-out"></div></section>
+<section class="out-block"><h2>Scale a recipe</h2>
+<form data-scale-form class="conv-form"><div class="row"><label>Recipe serves <input type="number" name="from" value="2" min="1"></label><label>I need <input type="number" name="to" value="6" min="1"></label></div>
+<label>Paste ingredient amounts, one per line<textarea name="list" rows="5">200 g spaghetti
+1 1/2 tbsp capers
+60 ml olive oil</textarea></label></form>
+<div data-scale-out class="conv-out"></div></section>
+<section class="out-block"><h2>Steak doneness</h2>
+<div class="table-wrap"><table><thead><tr><th>Doneness</th><th>Pull at</th><th>After rest</th></tr></thead><tbody>
+<tr><td>Rare</td><td>46°C / 115°F</td><td>49°C / 120°F</td></tr><tr><td>Medium-rare</td><td>52°C / 125°F</td><td>55°C / 130°F</td></tr>
+<tr><td>Medium</td><td>57°C / 135°F</td><td>60°C / 140°F</td></tr><tr><td>Medium-well</td><td>63°C / 145°F</td><td>66°C / 150°F</td></tr>
+<tr><td>Well done</td><td>68°C / 155°F</td><td>71°C / 160°F</td></tr></tbody></table></div>
+<p class="muted small">USDA guidance for whole cuts of beef is 63°C (145°F) with a 3-minute rest. See our <a href="../guides/steak-doneness-temperature-guide.html">doneness guide</a>.</p></section>
+</div>
+</section>{% endraw %}
