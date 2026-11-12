@@ -1,0 +1,59 @@
+---
+layout: "default"
+page_title: "Date-Night Menu Builder | Gastrosex.com"
+desc: "A complete menu for your occasion, diet, skill and budget, with a shopping list and timeline. Free, with drink pairings for every course."
+og_title: "Date-Night Menu Builder"
+canon: "https://gastrosex.com/tools/date-night-menu-builder.html"
+og_type: "website"
+og_image: ""
+robots: "index, follow, max-image-preview:large"
+root: "../"
+active: "tools"
+body_class: ""
+tools: true
+is404: false
+---
+{% raw %}<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Date-Night Menu Builder", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (web browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://gastrosex.com/tools/date-night-menu-builder.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gastrosex.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gastrosex.com/tools.html"}, {"@type": "ListItem", "position": 3, "name": "Date-Night Menu Builder"}]}</script>
+<section class="wrap tool-page" data-tool="date-night-menu-builder"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / <span aria-current="page">Date-Night Menu Builder</span></nav>
+<header class="page-head page-head-tight"><h1>Date-Night Menu Builder</h1><p class="lede">A complete menu for your occasion, diet, skill and budget, with a shopping list and timeline.</p></header>
+
+<div class="builder">
+<form class="builder-form" data-builder-form>
+<fieldset><legend>The occasion</legend>
+<select name="occasion"><option value="first-date">First date at home</option><option value="anniversary">Anniversary</option><option value="valentines">Valentine's Day</option><option value="birthday">Birthday</option><option value="just-because" selected>Just because</option><option value="brunch">Weekend brunch</option></select></fieldset>
+<fieldset><legend>The mood</legend><div class="seg">
+<label><input type="radio" name="vibe" value="classic" checked><span>Classic</span></label><label><input type="radio" name="vibe" value="cozy"><span>Cozy</span></label>
+<label><input type="radio" name="vibe" value="fancy"><span>Fancy</span></label><label><input type="radio" name="vibe" value="playful"><span>Playful</span></label></div></fieldset>
+<fieldset><legend>Dietary needs</legend><div class="checks">
+<label><input type="checkbox" name="diet" value="vegetarian"> Vegetarian</label><label><input type="checkbox" name="diet" value="pescatarian"> Pescatarian</label>
+<label><input type="checkbox" name="diet" value="gluten-free"> Gluten-free</label><label><input type="checkbox" name="diet" value="dairy-free"> Dairy-free</label></div></fieldset>
+<fieldset><legend>Your skill</legend><div class="seg">
+<label><input type="radio" name="skill" value="easy"><span>Keep it easy</span></label><label><input type="radio" name="skill" value="medium" checked><span>Confident</span></label><label><input type="radio" name="skill" value="advanced"><span>Show off</span></label></div></fieldset>
+<fieldset><legend>Budget for two</legend><div class="seg">
+<label><input type="radio" name="budget" value="1"><span>Under $25</span></label><label><input type="radio" name="budget" value="2" checked><span>$25–50</span></label><label><input type="radio" name="budget" value="3"><span>Splurge</span></label></div></fieldset>
+<fieldset><legend>Serve dinner at</legend><input type="time" name="serve" value="20:00"></fieldset>
+<fieldset><legend>Courses</legend><div class="checks">
+<label><input type="checkbox" name="course" value="drink" checked> Welcome drink</label><label><input type="checkbox" name="course" value="starter" checked> Starter</label>
+<label><input type="checkbox" name="course" value="side"> Side</label><label><input type="checkbox" name="course" value="dessert" checked> Dessert</label></div></fieldset>
+<button class="btn btn-saffron btn-lg" type="submit">Build my menu</button>
+</form>
+<div class="builder-out" data-builder-out aria-live="polite">
+<div class="menu-card menu-card-lg" data-out-card><p class="mc-head">Your menu will appear here</p><p class="muted">Choose an occasion and mood, then build. You can shuffle any course.</p></div>
+<div class="out-extra" data-out-extra hidden>
+<section class="out-block"><h2>Shopping list</h2><ul class="shop" data-out-shop></ul><button class="btn btn-ghost btn-sm" type="button" data-copy-shop>Copy list</button></section>
+<section class="out-block"><h2>Your timeline</h2><ol class="tline" data-out-timeline></ol></section>
+<section class="out-block"><h2>Drinks</h2><div data-out-drinks></div></section>
+<section class="out-block"><h2>Set the scene</h2><p data-out-scene></p></section>
+<div class="out-actions"><button class="btn btn-ghost" type="button" data-print>Print the plan</button><button class="btn btn-ghost" type="button" data-save-menu>Save this menu</button>
+<a class="btn btn-plum" data-chef-link href="../plan.html?want=private-chef">Have a chef cook this</a></div>
+<form class="lead-box" data-form="Menu builder: send my menu" data-ok="Sent. Your menu is on its way to your inbox (check spam if you don't see it in a few minutes).">
+<h2>Email me this menu</h2><p>Get the menu, shopping list and timeline in your inbox, plus the free Date-Night Playbook.</p>
+<div class="row"><label class="sr" for="mb-email">Email</label><input id="mb-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+<button class="btn btn-saffron" type="submit">Send it</button></div>
+<input type="hidden" name="menu" data-menu-field><input type="hidden" name="_autoresponse" data-auto-field>
+<label class="check"><input type="checkbox" name="consent" value="yes" required> Email me this menu and occasional recipe ideas. I can unsubscribe any time.</label><div class="hp" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+<p class="form-msg" role="status"></p></form>
+</div>
+</div>
+</div>
+</section>{% endraw %}
