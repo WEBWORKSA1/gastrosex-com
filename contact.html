@@ -1,0 +1,32 @@
+---
+layout: "default"
+page_title: "Contact us | Gastrosex.com"
+desc: "Contact Gastrosex.com with questions, corrections, ideas, press and partnership inquiries."
+og_title: "Contact us"
+canon: "https://gastrosex.com/contact.html"
+og_type: "website"
+og_image: ""
+robots: "index, follow, max-image-preview:large"
+root: ""
+active: ""
+body_class: ""
+tools: false
+is404: false
+---
+{% raw %}
+<section class="page-head wrap"><h1>Contact us</h1></section><section class="wrap prose prose-page">
+<div class="split split-flat">
+<div>
+<p>We read every message and reply within one or two business days.</p>
+<ul class="ticks"><li>Planning a special dinner? <a href="plan.html">Plan my date night</a></li><li>Advertising or sponsorship? <a href="advertise.html">Advertise with us</a></li>
+<li>Jobs and freelance work? <a href="careers.html">Work with us</a></li><li>Buying this website or domain? <a href="https://web.works/contact" target="_blank" rel="noopener">Owner contact</a></li></ul>
+</div>
+<form class="lead-box" data-form="Contact form" data-redirect="thank-you.html?f=contact" data-prefill>
+<div class="f2"><label>Name<input name="name" required autocomplete="name"></label><label>Email<input type="email" name="email" required autocomplete="email"></label></div>
+<label>Topic<select name="topic"><option value="question">A question about a recipe</option><option value="correction">A correction</option><option value="idea">A recipe or guide idea</option><option value="video">A video suggestion</option><option value="support">Supporting the site</option><option value="press">Press</option><option value="partner">Partnership</option><option value="privacy">A privacy request</option><option value="other">Something else</option></select></label>
+<label>Message<textarea name="message" rows="5" required></textarea></label>
+<label class="check"><input type="checkbox" name="consent" value="yes" required> I agree to the <a href="privacy.html">privacy policy</a>.</label>
+<div class="hp" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+<button class="btn btn-saffron" type="submit">Send message</button><p class="form-msg" role="status"></p>
+</form>
+</div></section>{% endraw %}
