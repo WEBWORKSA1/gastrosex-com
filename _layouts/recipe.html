@@ -1,0 +1,58 @@
+---
+layout: default
+---
+{% assign r = site.data.recipes[page.slug] %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","name":{{ r.title | jsonify }},"description":{{ r.short | jsonify }},"author":{"@type":"Organization","name":"Gastrosex.com Editors"},"datePublished":"2026-11-12","recipeYield":"2 servings","totalTime":"{{ r.total_iso }}","prepTime":"{{ r.active_iso }}","cookTime":"{{ r.cook_iso }}","recipeCategory":{{ r.course | jsonify }},"recipeCuisine":{{ r.cuisine | jsonify }},"keywords":{{ r.keywords | jsonify }},"recipeIngredient":[{% for i in r.ings %}{% capture t %}{{ i.h | strip_html }} {{ i.i }}{% endcapture %}{{ t | strip | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}],"recipeInstructions":[{% for s in r.steps %}{"@type":"HowToStep","text":{{ s.t | jsonify }},"url":"{{ page.canon }}#step-{{ forloop.index }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% if r.diet_urls.size > 0 %},"suitableForDiet":{{ r.diet_urls | jsonify }}{% endif %}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gastrosex.com/index.html"},{"@type":"ListItem","position":2,"name":"Recipes","item":"https://gastrosex.com/recipes.html"},{"@type":"ListItem","position":3,"name":{{ r.title | jsonify }}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in r.faq %}{"@type":"Question","name":{{ f.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}</script>
+<article class="recipe wrap" data-recipe="{{ page.slug }}">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ page.root }}index.html">Home</a> / <a href="{{ page.root }}recipes.html">Recipes</a> / <span aria-current="page">{{ r.title | escape }}</span></nav>
+<header class="rec-head">
+<p class="rec-course">{{ r.course }}, {{ r.cuisine | escape }}</p>
+<h1>{{ r.title | escape }}</h1>
+<p class="lede">{{ r.short | escape }}</p>
+<dl class="rec-facts">
+<div><dt>Total</dt><dd>{{ r.total }}</dd></div><div><dt>Hands-on</dt><dd>{{ r.active }}</dd></div>{% if r.chill != "" %}<div><dt>Chill</dt><dd>{{ r.chill }}</dd></div>{% endif %}
+<div><dt>Skill</dt><dd>{{ r.skill }}</dd></div><div><dt>Serves</dt><dd>2</dd></div><div><dt>Cost for two</dt><dd>about ${{ r.cost_usd }}</dd></div>
+</dl>
+<div class="rec-chips">{% for d in r.diets %}<span class="chip chip-diet">{{ d }}</span>{% endfor %}</div>
+<div class="rec-actions">
+<a class="btn btn-saffron" href="#make-it">Jump to recipe</a>
+<button class="btn btn-ghost" type="button" data-save="{{ page.slug }}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg> <span>Save</span></button>
+<button class="btn btn-ghost" type="button" data-print><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H5a1 1 0 0 1-1-1v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-2M7 14h10v6H7z"/></svg> Print</button>
+<button class="btn btn-ghost" type="button" data-share><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4m0 0L8 8m4-4 4 4M5 13v6h14v-6"/></svg> Share</button>
+</div>
+</header>
+<div class="rec-intro prose">
+<p>{{ r.intro | escape }}</p>
+<aside class="why"><h2>Why it impresses</h2><p>{{ r.why | escape }}</p></aside>
+</div>
+{% if r.video %}<section class="rec-video" aria-label="Video"><figure class="yt"><button class="yt-btn" type="button" data-yt="{{ r.video.id }}" aria-label="Play video: {{ r.video.title | escape }}"><img src="https://i.ytimg.com/vi/{{ r.video.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-play"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><strong>{{ r.video.title | escape }}</strong> <span>{{ r.video.channel | escape }} on YouTube</span></figcaption></figure><p class="muted small">Video by {{ r.video.channel | escape }}, embedded from YouTube. Their method may differ slightly from ours.</p></section>{% endif %}
+<section class="make-it" id="make-it" aria-label="Recipe">
+<div class="ing-card">
+<div class="ing-head"><h2>Ingredients</h2>
+<div class="servings" role="group" aria-label="Servings"><span>Serves</span><button type="button" data-serves="1" aria-pressed="false">1</button><button type="button" data-serves="2" aria-pressed="true">2</button><button type="button" data-serves="4" aria-pressed="false">4</button><button type="button" data-serves="6" aria-pressed="false">6</button></div></div>
+<ul class="ings">{% for i in r.ings %}<li><label><input type="checkbox"> <span class="amt">{{ i.h }}</span> <span class="item">{{ i.i | escape }}</span></label></li>{% endfor %}</ul>
+<button class="btn btn-ghost btn-sm" type="button" data-copy-list>Copy shopping list</button>
+</div>
+<div class="method">
+<div class="method-head"><h2>Method</h2><button class="btn btn-plum btn-sm" type="button" data-cook-mode aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-3.9 0-6-2.6-6-5.6C6 11 11 9 10 4c3 1.5 8 5.4 8 11.2 0 3.2-2.2 5.8-6 5.8Z"/></svg> Cook mode</button></div>
+<ol class="steps">{% for s in r.steps %}<li id="step-{{ forloop.index }}"><p>{{ s.t | escape }}</p>{% if s.m > 0 %} <button type="button" class="timer-btn" data-timer="{{ s.m }}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Start {{ s.m }}-minute timer</button>{% endif %}</li>{% endfor %}</ol>
+<p class="muted small cook-hint" hidden data-cook-hint>Cook mode keeps your screen awake. Tap a step to mark your place.</p>
+</div>
+</section>
+<section class="rec-notes">
+<div class="note-block"><h3>Tips</h3><ul>{% for t in r.tips %}<li>{{ t | escape }}</li>{% endfor %}</ul></div>
+<div class="note-block"><h3>Make ahead</h3><p>{{ r.makeahead | escape }}</p></div>
+<div class="note-block"><h3>Plating</h3><p>{{ r.plating | escape }}</p></div>
+<div class="note-block"><h3>What to drink</h3><p><strong>Wine:</strong> {{ r.wine | escape }}</p><p><strong>Zero-proof:</strong> {{ r.zero | escape }}</p></div>
+{% if r.serve_with.size > 0 %}<div class="note-block"><h3>Serve it with</h3><ul>{% for x in r.serve_with %}{% assign o = site.data.recipes[x] %}<li><a href="{{ page.root }}recipes/{{ x }}.html">{{ o.title | escape }}</a></li>{% endfor %}</ul></div>{% endif %}
+</section>
+<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2>{% for f in r.faq %}<details><summary>{{ f.q | escape }}</summary><p>{{ f.a | escape }}</p></details>{% endfor %}</section>
+<section class="rec-cta">
+<a class="cta-card" href="{{ page.root }}tools/date-night-menu-builder.html?main={{ page.slug }}"><strong>Build a full menu around this dish</strong><span>Starter, dessert, drinks, shopping list and timeline.</span></a>
+<a class="cta-card" href="{{ page.root }}contests.html"><strong>Cooked it? Enter this month's contest</strong><span>Send a photo of your plate for a chance to win.</span></a>
+<a class="cta-card" href="{{ page.root }}plan.html?want=private-chef"><strong>Want a chef to cook it for you?</strong><span>Get private chef options for your date.</span></a>
+</section>
+<section class="sec related" aria-labelledby="rel-h"><h2 id="rel-h">You might also cook</h2><ul class="guide-list">{% for x in r.related %}{% assign o = site.data.recipes[x] %}<li><a href="{{ page.root }}recipes/{{ x }}.html"><span class="g-cat">{{ o.course }}</span><strong>{{ o.title | escape }}</strong><span class="g-desc">{{ o.short | escape }}</span></a></li>{% endfor %}</ul></section>
+</article>
