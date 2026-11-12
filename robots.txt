@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /saved.html
+
+Sitemap: https://gastrosex.com/sitemap.xml

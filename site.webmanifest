@@ -1,0 +1,15 @@
+{
+ "name": "Gastrosex.com",
+ "short_name": "Gastrosex",
+ "start_url": "./index.html",
+ "display": "standalone",
+ "background_color": "#f4eef2",
+ "theme_color": "#2b1631",
+ "icons": [
+  {
+   "src": "assets/img/favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ]
+}
