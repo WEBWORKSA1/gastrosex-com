@@ -16,7 +16,7 @@ Date-night recipes, menus, guides and planning tools for anyone who cooks to imp
 python3 build.py              # regenerate Jekyll pages, _data, search index and sitemap
 python3 build.py --preview    # also render the finished site into _site/ (pip install python-liquid)
 ```
-The generator (`build.py`, `content/`, `scripts/`, `ops/`) ships in `gastrosex-source.zip`; upload it to the repo root (Add file → Upload files) to rebuild here or run the weekly workflow. Edit content in `content/*.py`, styles in `assets/css/site.css`, behaviour in `assets/js/`. Shared header, footer and owner bar: `_layouts/default.html`; recipe page template: `_layouts/recipe.html` with one data file per recipe in `_data/recipes/`. You can also edit any generated page directly. The build fails if any file contains a plain email address.
+The generator (`build.py`, `content/`, `scripts/`, `ops/`) ships in `gastrosex-source.zip`; upload it to the repo root (Add file → Upload files) to rebuild here or run the weekly workflow. Edit content in `content/*.py`, styles in `assets/css/site.css`, behaviour in `assets/js/`. Shared header, footer and owner bar: `_layouts/default.html`; recipe page template: `_layouts/recipe.html` with one data file per recipe in `_data/recipes/`. After editing content, bump `CONTENT_DATE` in `build.py` so "Updated" dates and the sitemap stay accurate. You can also edit any generated page directly. The build fails if any file contains a plain email address.
 
 ## Publishing on GitHub Pages
 Settings → Pages → Build and deployment → **Deploy from a branch** → `main` / `(root)` → Save. Pages builds with Jekyll automatically (do not add a `.nojekyll` file). Live at `https://webworksa1.github.io/gastrosex-com/`.
